@@ -16,6 +16,12 @@ gem 'pundit'
 gem 'simple_form'
 gem 'thin'
 gem 'upmin-admin'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'carrierwave'
+gem 'cloudinary'
+gem  'rmagick'
+gem 'masonry-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19]

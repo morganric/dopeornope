@@ -1,0 +1,31 @@
+<h1 class="text-center">Dope or Nope?</h1>
+
+<br/>
+
+
+<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+  <% @posts.each do |post| %>
+  <div class="box">
+          <%= link_to image_tag(post.image.url(:mini)), post, :class => "img-thumbnail pull-left" %>
+          <hr/>
+          <p class="clearfix">
+        <% if  post.get_likes.count > 0 %>
+         <label class="label label-success">
+          <i class='glyphicon glyphicon-thumbs-up'></i>
+          <%= post.get_likes.size %></label>
+        <% end %>
+
+        <% if  post.get_dislikes.count > 0 %>
+        <label class="label label-danger">
+        <i class='glyphicon glyphicon-thumbs-down'></i>
+          <%= post.get_dislikes.size %>
+        </label>
+        <% end %>
+        <label class="label label-default">
+          <%= post.views %>   Views
+        </label>
+
+        </p>
+  </div>
+  <% end %>
+</div>

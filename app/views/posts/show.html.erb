@@ -1,0 +1,52 @@
+
+
+<h1>
+  <%= @post.title %>
+  <small>by <%#= @post.user.name %></small>
+</h1>
+
+<%= image_tag @post.image.url() %>
+<br/>
+
+<p class="well">
+  <%= @post.description %>
+</p>
+
+<% if  @post.get_likes.count > 0 %>
+ <label class="label label-success"><i class='glyphicon glyphicon-thumbs-up'></i> <%= @post.get_likes.size %></label>
+<% end %>
+
+<% if  @post.get_dislikes.count > 0 %>
+<label class="label label-danger"><i class='glyphicon glyphicon-thumbs-down'></i> <%= @post.get_dislikes.size %></label>
+<% end %>
+
+<br/><br/>
+<label>
+  <%= @post.views %>   Views
+</label>
+
+<br/><br/>
+
+<%# if current_user != nil %>
+	<% if  @post.votes_for.by_type(User).voters.include?(current_user) %>
+
+	      <% if @post.votes_for.down.by_type(User).voters.include?(current_user) %>
+	      	<%= link_to raw("<i class='glyphicon glyphicon-thumbs-up'></i>  Dope"), dope_path(:id => @post.id), :remote => true, class: "btn fav btn-success", :method => :post %>
+	          
+	      <% else %>
+	        <%= link_to raw("<i class='glyphicon glyphicon-thumbs-down'></i>  Nope"), nope_path(:id => @post.id), :remote => true, class: "btn fav btn-danger", :method => :post %>
+	      <% end %>
+
+	<% else %>
+		<%= link_to raw("<i class='glyphicon glyphicon-thumbs-up'></i>  Dope"), dope_path(:id => @post.id), :remote => true, class: "btn fav btn-success", :method => :post %>
+
+        <%= link_to raw("<i class='glyphicon glyphicon-thumbs-down'></i>  Nope"), nope_path(:id => @post.id), :remote => true, class: "btn fav btn-danger", :method => :post %>
+
+	        
+	<% end %>
+<%# end %> 
+
+<hr/>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

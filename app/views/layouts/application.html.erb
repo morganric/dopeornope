@@ -5,7 +5,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Dopeornope" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Dopeornope" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application'%>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>

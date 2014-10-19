@@ -21,6 +21,12 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem  'rmagick'
 gem 'masonry-rails'
+gem 'therubyracer'
+gem "less-rails"
+gem 'less-rails-bootstrap'
+gem "twitter-bootstrap-rails"
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-helpers'
 
 group :development do
   gem 'better_errors'

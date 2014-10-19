@@ -20,7 +20,8 @@ module Dopeornope
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    config.assets.initialize_on_precompile = true
+    # config.assets.initialize_on_precompile = true
+    Rails.application.config.assets.precompile += %w( cyborg.css cyborg.js )
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

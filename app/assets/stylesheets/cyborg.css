@@ -1,0 +1,18 @@
+/* Cyborg
+ * Bootswatch
+ *= require_self
+ *= require cyborg/loader
+ *= require cyborg/bootswatch
+
+ *= require 'masonry/basic'
+*= require 'masonry/centered'
+*= require 'masonry/fluid'
+*= require 'masonry/gutters'
+*= require 'masonry/infinitescroll'
+*= require 'masonry/right-to-left'
+*= require 'masonry/transitions'
+*/
+
+main {
+	margin-top: 60px;
+}

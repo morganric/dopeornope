@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :votes
 
 
-  match "/posts/:id/dope" => "posts#dope", :as => "dope"
-  match "/posts/:id/nope" => "posts#nope", :as => "nope"
+  get "/posts/:id/dope" => "posts#dope", :as => "dope"
+  get "/posts/:id/nope" => "posts#nope", :as => "nope"
 
   mount Upmin::Engine => '/admin'
   root to: 'posts#index'

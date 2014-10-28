@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -27,6 +27,11 @@ gem 'less-rails-bootstrap'
 gem "twitter-bootstrap-rails"
 gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-helpers'
+gem 'payola-payments', '~> 1.0.8'
+gem 'stripe'
+gem 'paper_trail', '~> 3.0.6'
+gem 'omniauth-stripe-connect'
+gem 'omniauth'
 
 group :development do
   gem 'better_errors'

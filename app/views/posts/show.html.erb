@@ -21,6 +21,24 @@
   <%= @post.description %>
 </p>
 
+<p>
+$<%= @post.price %>
+<%= render 'payola/transactions/checkout',
+      sellable: @post, :button_text => "Buy", :email => current_user.email, :name => @post.name %>
+
+<%= form_tag charges_path do %>
+
+  <%= hidden_field_tag :amount, number_with_precision(@post.price, :precision => 2), :class=> "form-control", :width => "50%", :min => number_with_precision(@post.price, :precision => 2), :step => 1 %>
+
+  <%= hidden_field_tag :id, @post.id %>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= @post.user.stripe_publishable_key %>"
+          data-description="<%= @post.title %>" data-email="<%= current_user.email %>"
+          data-amount="<%= @post.price.to_i*100 %>"></script>
+<% end %>
+</p>
+
 <% if  @post.get_likes.count > 0 %>
  <label class="label label-success"><i class='glyphicon glyphicon-thumbs-up'></i> <%= @post.get_likes.size %></label>
 <% end %>

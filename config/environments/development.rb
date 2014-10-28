@@ -1,3 +1,8 @@
+ENV['STRIPE_CONNECT_CLIENT_ID'] = "ca_4c9VFcBuTshntvEuZlbvKpOh2FjDagBn"
+ENV['STRIPE_SECRET'] = "sk_test_PhIgEyytohpRn7TF5eXG9Sk9"
+ENV['SECRET_KEY'] = "sk_test_PhIgEyytohpRn7TF5eXG9Sk9"
+ENV['PUBLISHABLE_KEY'] = "pk_test_PeLyRBcFsGgCdFxNcgAopo6F"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -12,6 +17,7 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
+  config.action_controller.action_on_unpermitted_parameters = :raise
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
